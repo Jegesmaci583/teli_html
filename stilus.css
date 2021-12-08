@@ -1,0 +1,97 @@
+main, nav, article, aside, footer {
+	border: 1px solid gray;
+    background-color: white;
+}
+
+body{
+    background-image: url("kepek/hatter.jpg");
+}
+
+section{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+div.polaroid {
+    padding: 5px;
+    border: 1px solid #BFBFBF;
+    background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
+  }
+  
+div.polaroid img{
+    width:100%;
+}
+
+div.rotate_right {
+    transform: rotate(7deg);
+}
+  
+div.rotate_left {
+    transform: rotate(-8deg);
+}
+  
+main {
+    margin:auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-areas:
+                        "h h h h"
+                        "n a a as"
+                        "f f f f";
+}
+
+header {
+    grid-area:h;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    color: lightcyan;
+    background-image: url("kepek/fejlec.jpg");
+}
+
+nav {
+    grid-area:n;
+    text-align: center;
+}
+
+nav ul li {
+    border-radius: 10px;
+    background: #3021ff;
+    padding: 5px;
+    list-style-type: none;
+}
+
+article {
+    grid-area:a;
+    background-color: pink;
+    grid-gap: 10px;
+}
+
+aside {
+    grid-area:as;
+    float:left
+}
+
+footer {
+    grid-area:f;
+    text-align: center;
+    background-color: rgb(106, 106, 255);
+}
+
+@media screen and (max-width:600px){
+    footer nav ul {
+        grid-template-columns: 1fr;
+    }
+    main {
+        grid-template-areas: "h"
+                             "a"
+                             "as"
+                             "f";
+    }
+    header nav ul {
+        grid-template-columns: 1fr;
+    }
+    article{
+        grid-template-columns: 1fr;
+    }
+}
